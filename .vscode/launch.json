@@ -1,0 +1,86 @@
+{
+    // IntelliSense를 사용하여 가능한 특성에 대해 알아보세요.
+    // 기존 특성에 대한 설명을 보려면 가리킵니다.
+    // 자세한 내용을 보려면 https://go.microsoft.com/fwlink/?linkid=830387을(를) 방문하세요.
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "chapter04",
+            "cwd": "FLUTTER_BASIC\\chapter04",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "chapter04 (profile mode)",
+            "cwd": "FLUTTER_BASIC\\chapter04",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "chapter06",
+            "cwd": "FLUTTER_BASIC\\chapter06",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "chapter06 (profile mode)",
+            "cwd": "FLUTTER_BASIC\\chapter06",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "chapter07",
+            "cwd": "FLUTTER_BASIC\\chapter07",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "chapter07 (profile mode)",
+            "cwd": "FLUTTER_BASIC\\chapter07",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "chapter08",
+            "cwd": "FLUTTER_BASIC\\chapter08",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "chapter08 (profile mode)",
+            "cwd": "FLUTTER_BASIC\\chapter08",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "chapter09",
+            "cwd": "FLUTTER_BASIC\\chapter09",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "chapter09 (profile mode)",
+            "cwd": "FLUTTER_BASIC\\chapter09",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "chapter10",
+            "cwd": "FLUTTER_BASIC\\chapter10",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "chapter10 (profile mode)",
+            "cwd": "FLUTTER_BASIC\\chapter10",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        }
+    ]
+}
