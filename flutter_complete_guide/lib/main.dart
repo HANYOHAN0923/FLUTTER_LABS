@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+
 import './question.dart';
+import './answer.dart';
 
 void main() {
   runApp(MyApp());
@@ -26,9 +28,19 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    List<String> questionList = [
-      'Choose an odd number',
-      'Choose an even number'
+    const questionList = [
+      {
+        'questionText': 'Choose an odd number',
+        'answers': ['4', '100', '7', '36']
+      },
+      {
+        'questionText': 'Choose an even number',
+        'answers': ['99', '25', '1', '404']
+      },
+      {
+        'questionText': 'Choose an Natural Number',
+        'answers': ['3.14', '-24.2', '0', '-100']
+      },
     ];
 
     return MaterialApp(
@@ -39,23 +51,13 @@ class _MyAppState extends State<MyApp> {
         body: Column(
           children: [
             Question(
-              questionList[_questionIndex],
+              questionList[_questionIndex]['questionText'] as String,
             ),
-            RaisedButton(
-              child: Text('0'),
-              onPressed: _textChanger,
-            ),
-            RaisedButton(
-              child: Text('1'),
-              onPressed: () => _questionIndex++,
-            ),
-            RaisedButton(
-              child: Text('2'),
-              onPressed: () {
-                _questionIndex++;
-                print(_questionIndex);
-              },
-            ),
+            // as List<String>을 붙인거는 다트에서 인식을 못해서 추가함
+            ...(questionList[_questionIndex]['answers'] as List<String>)
+                .map((answer) {
+              return Answer(_textChanger, answer);
+            }).toList()
           ],
         ),
       ),
