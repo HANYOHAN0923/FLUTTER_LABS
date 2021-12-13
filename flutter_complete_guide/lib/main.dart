@@ -14,9 +14,7 @@ class MyApp extends StatefulWidget {
   }
 }
 
-//_privateClass can only be used inside the main.dart
 class _MyAppState extends State<MyApp> {
-  //private property of this class
   int _questionIndex = 0;
 
   void _textChanger() {
@@ -28,7 +26,7 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    const questionList = [
+    final questionList = [
       {
         'questionText': 'Choose an odd number',
         'answers': ['4', '100', '7', '36']
@@ -53,7 +51,6 @@ class _MyAppState extends State<MyApp> {
             Question(
               questionList[_questionIndex]['questionText'] as String,
             ),
-            // as List<String>을 붙인거는 다트에서 인식을 못해서 추가함
             ...(questionList[_questionIndex]['answers'] as List<String>)
                 .map((answer) {
               return Answer(_textChanger, answer);
