@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_complete_guide/quiz.dart';
 
 import 'quiz.dart';
 import 'result.dart';
@@ -55,14 +54,11 @@ class _MyAppState extends State<MyApp> {
           title: Text('My First App'),
         ),
         body: _questionIndex < _questionList.length
-            // 가독성을 위해서, 더 위젯은 더 적고, 디테일 할 수록 좋음
             ? Quiz(
                 textChanger: _textChanger,
                 questionIndex: _questionIndex,
                 questionList: _questionList,
               )
-            // else block : => include another Widgets
-            // Center => has child
             : Result(),
       ),
     );
