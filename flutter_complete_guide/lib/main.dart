@@ -18,26 +18,51 @@ class _MyAppState extends State<MyApp> {
   final _questionList = const [
     {
       'questionText': 'Choose an odd number',
-      'answers': ['4', '100', '7', '36']
+      'answers': [
+        {'text': '7', 'score': 25},
+        {'text': '4', 'score': 0},
+        {'text': '100', 'score': 0},
+        {'text': '36', 'score': 0}
+      ]
     },
     {
       'questionText': 'Choose an even number',
-      'answers': ['99', '25', '1', '404']
+      'answers': [
+        {'text': '99', 'score': 0},
+        {'text': '25', 'score': 0},
+        {'text': '1', 'score': 0},
+        {'text': '404', 'score': 25},
+      ]
     },
     {
       'questionText': 'Choose an Natural Number',
-      'answers': ['3.14', '-24.2', '0', '-100']
+      'answers': [
+        {'text': '3.14', 'score': 0},
+        {'text': '-24.2', 'score': 0},
+        {'text': '0', 'score': 25},
+        {'text': '-100', 'score': 0}
+      ]
     },
+    {
+      'questionText': 'Choose a Prime Number',
+      'answers': [
+        {'text': '15', 'score': 0},
+        {'text': '36', 'score': 0},
+        {'text': '4', 'score': 0},
+        {'text': '67', 'score': 25}
+      ]
+    }
   ];
 
   int _questionIndex = 0;
+  var _totalScore = 0;
 
-  void _textChanger() {
-    if (_questionIndex < _questionList.length) {
-      print('We have more questions!');
-    } else {
-      print('No More Questions!');
-    }
+  void _textChanger(int score) {
+    print(_questionList.length);
+
+    _totalScore += score;
+
+    print(_totalScore);
 
     setState(() {
       _questionIndex++;

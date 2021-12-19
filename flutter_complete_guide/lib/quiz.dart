@@ -4,7 +4,7 @@ import 'answer.dart';
 
 class Quiz extends StatelessWidget {
   final List<Map<String, Object>> questionList;
-  final VoidCallback textChanger;
+  final Function textChanger;
   final int questionIndex;
 
   Quiz(
@@ -19,9 +19,11 @@ class Quiz extends StatelessWidget {
         Question(
           questionList[questionIndex]['questionText'] as String,
         ),
-        ...(questionList[questionIndex]['answers'] as List<String>)
+        // Map은 키와 value 구성인데 여기서 Map<key타입,value타입>설정을 해줘야하는데 Object는 모든 클래스의 상위 클래스로써 어떤 타입이든 받을 수 있다.
+        ...(questionList[questionIndex]['answers'] as List<Map<String, Object>>)
             .map((answer) {
-          return Answer(textChanger, answer);
+          return Answer(
+              () => textChanger(answer['score']), answer['text'] as String);
         }).toList()
       ],
     );
