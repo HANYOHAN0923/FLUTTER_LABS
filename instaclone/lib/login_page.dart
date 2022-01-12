@@ -1,3 +1,4 @@
+/*
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -32,7 +33,7 @@ class LoginPage extends StatelessWidget {
         ),
     );
   }
-
+  
   //로그인은 무조건 비동기로 이루어짐
   Future<FirebaseUser> _handleSignIn() async {
     GoogleSignInAccount googleUser = await _googleSignIn.signIn();
@@ -43,3 +44,4 @@ class LoginPage extends StatelessWidget {
     return user;
   }
 }
+*/
