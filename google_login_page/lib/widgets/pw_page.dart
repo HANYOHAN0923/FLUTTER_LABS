@@ -1,3 +1,4 @@
+/*
 import 'package:flutter/material.dart';
 
 /*
@@ -57,6 +58,24 @@ class PwPage extends StatelessWidget {
             ),
           ),
         ),
+      ),
+    );
+  }
+}
+*/
+import 'package:flutter/material.dart';
+
+class PwPage extends StatelessWidget {
+  final String email;
+
+  PwPage({required this.email});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(),
+        body: Container(child: Center(child: Text(email))),
       ),
     );
   }
