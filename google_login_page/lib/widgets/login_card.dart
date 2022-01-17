@@ -1,43 +1,135 @@
 import 'package:flutter/material.dart';
 
+import 'package:url_launcher/url_launcher.dart';
+import 'pw_page.dart';
+
+const String _url = 'https://flutter.dev';
+
 class LoginCard extends StatefulWidget {
   @override
   State<LoginCard> createState() => _LoginCardState();
 }
 
 class _LoginCardState extends State<LoginCard> {
-  final useridController = TextEditingController();
-  final userpwdController = TextEditingController();
+  final idController = TextEditingController();
+
+  void _launchURL() async {
+    if (!await launch(_url)) throw 'Could not launch $_url';
+  }
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: 300,
-      height: 500,
+      height: 430,
       child: Card(
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
           child: Column(
-        children: [
-          Image.asset('assets/images/google.png'),
-          Text('로그인'),
-          Text('Google 계정 사용'),
-          Padding(padding: EdgeInsets.all(10)),
-          Container(
-            width: 235,
-            height: 50,
-            child: TextField(
-              controller: useridController,
-              decoration: InputDecoration(
-                //icon: Icon(Icons.person_outline),
-                labelText: '이메일 또는 휴대전화',
-                hintText: '이메일 또는 휴대전화',
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(5.0)),
+            children: [
+              Padding(padding: EdgeInsets.only(top: 40)),
+              SizedBox(
+                  width: 70, child: Image.asset('assets/images/google.png')),
+              Padding(padding: EdgeInsets.all(5)),
+              Text('로그인',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+              Padding(padding: EdgeInsets.all(5)),
+              Text('Google 계정 사용',
+                  style: TextStyle(fontWeight: FontWeight.w600)),
+              Padding(padding: EdgeInsets.all(13)),
+              Container(
+                width: 235,
+                height: 50,
+                child: TextField(
+                  controller: idController,
+                  decoration: InputDecoration(
+                    //icon: Icon(Icons.person_outline),
+                    labelText: '이메일 또는 휴대전화',
+                    hintText: '이메일 또는 휴대전화',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                    ),
+                  ),
                 ),
               ),
-            ),
-          )
-        ],
-      )),
+              Padding(padding: EdgeInsets.all(1)),
+              Padding(
+                padding: const EdgeInsets.only(right: 110),
+                child: FlatButton(
+                  onPressed: _launchURL,
+                  child: Text(
+                    '이메일을 잊으셨나요?',
+                    style: TextStyle(
+                        color: Colors.blueAccent,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 12),
+                  ),
+                ),
+              ),
+              Padding(padding: EdgeInsets.all(20)),
+              Container(
+                  width: 235,
+                  child: Text(
+                    '내 컴퓨터가 아닌가요? 게스트 모드를 사용하여 비공개로 로그',
+                    style: TextStyle(fontSize: 9),
+                  )),
+              Container(
+                width: 235,
+                child: Row(
+                  children: [
+                    Text(
+                      '인하세요.',
+                      style: TextStyle(fontSize: 9),
+                    ),
+                    TextButton(
+                        onPressed: _launchURL,
+                        child: Text(
+                          '자세히 알아보기',
+                          style: TextStyle(
+                              color: Colors.blueAccent,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 10),
+                        )),
+                  ],
+                ),
+              ),
+              Padding(padding: EdgeInsets.all(10)),
+              Container(
+                width: 235,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    TextButton(
+                        onPressed: _launchURL,
+                        child: Text(
+                          '계정 만들기',
+                          style: TextStyle(
+                              color: Colors.blueAccent,
+                              fontSize: 9,
+                              fontWeight: FontWeight.bold),
+                        )),
+                    SizedBox(
+                      width: 60,
+                      child: RaisedButton(
+                        color: Colors.blueAccent,
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      PwPage(email: idController.text)));
+                        },
+                        child: Text(
+                          '다 음',
+                          style: TextStyle(color: Colors.white, fontSize: 10),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              )
+            ],
+          )),
     );
   }
 }
