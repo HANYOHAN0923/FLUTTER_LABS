@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
         title: 'Google Login Widget',
         home: Scaffold(
           appBar: AppBar(
-            title: Text('Google Login Widget'),
+            title: const Text('Google Login Widget'),
           ),
           body: _buildBody(),
         ));

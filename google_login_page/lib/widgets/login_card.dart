@@ -27,22 +27,22 @@ class _LoginCardState extends State<LoginCard> {
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
           child: Column(
             children: [
-              Padding(padding: EdgeInsets.only(top: 40)),
+              const Padding(padding: EdgeInsets.only(top: 40)),
               SizedBox(
                   width: 70, child: Image.asset('assets/images/google.png')),
-              Padding(padding: EdgeInsets.all(5)),
-              Text('로그인',
+              const Padding(padding: EdgeInsets.all(5)),
+              const Text('로그인',
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
-              Padding(padding: EdgeInsets.all(5)),
-              Text('Google 계정 사용',
+              const Padding(padding: EdgeInsets.all(5)),
+              const Text('Google 계정 사용',
                   style: TextStyle(fontWeight: FontWeight.w600)),
-              Padding(padding: EdgeInsets.all(13)),
+              const Padding(padding: EdgeInsets.all(13)),
               Container(
                 width: 235,
                 height: 50,
                 child: TextField(
                   controller: idController,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     //icon: Icon(Icons.person_outline),
                     labelText: '이메일 또는 휴대전화',
                     hintText: '이메일 또는 휴대전화',
@@ -52,12 +52,12 @@ class _LoginCardState extends State<LoginCard> {
                   ),
                 ),
               ),
-              Padding(padding: EdgeInsets.all(1)),
+              const Padding(padding: EdgeInsets.all(1)),
               Padding(
                 padding: const EdgeInsets.only(right: 110),
-                child: FlatButton(
+                child: TextButton(
                   onPressed: _launchURL,
-                  child: Text(
+                  child: const Text(
                     '이메일을 잊으셨나요?',
                     style: TextStyle(
                         color: Colors.blueAccent,
@@ -66,10 +66,10 @@ class _LoginCardState extends State<LoginCard> {
                   ),
                 ),
               ),
-              Padding(padding: EdgeInsets.all(20)),
+              const Padding(padding: EdgeInsets.all(20)),
               Container(
                   width: 235,
-                  child: Text(
+                  child: const Text(
                     '내 컴퓨터가 아닌가요? 게스트 모드를 사용하여 비공개로 로그',
                     style: TextStyle(fontSize: 9),
                   )),
@@ -77,13 +77,13 @@ class _LoginCardState extends State<LoginCard> {
                 width: 235,
                 child: Row(
                   children: [
-                    Text(
+                    const Text(
                       '인하세요.',
                       style: TextStyle(fontSize: 9),
                     ),
                     TextButton(
                         onPressed: _launchURL,
-                        child: Text(
+                        child: const Text(
                           '자세히 알아보기',
                           style: TextStyle(
                               color: Colors.blueAccent,
@@ -93,7 +93,7 @@ class _LoginCardState extends State<LoginCard> {
                   ],
                 ),
               ),
-              Padding(padding: EdgeInsets.all(10)),
+              const Padding(padding: EdgeInsets.all(10)),
               Container(
                 width: 235,
                 child: Row(
@@ -101,7 +101,7 @@ class _LoginCardState extends State<LoginCard> {
                   children: [
                     TextButton(
                         onPressed: _launchURL,
-                        child: Text(
+                        child: const Text(
                           '계정 만들기',
                           style: TextStyle(
                               color: Colors.blueAccent,
@@ -110,8 +110,9 @@ class _LoginCardState extends State<LoginCard> {
                         )),
                     SizedBox(
                       width: 60,
-                      child: RaisedButton(
-                        color: Colors.blueAccent,
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            primary: Colors.blueAccent),
                         onPressed: () {
                           Navigator.push(
                               context,
@@ -119,7 +120,7 @@ class _LoginCardState extends State<LoginCard> {
                                   builder: (context) =>
                                       PwPage(email: idController.text)));
                         },
-                        child: Text(
+                        child: const Text(
                           '다 음',
                           style: TextStyle(color: Colors.white, fontSize: 10),
                         ),

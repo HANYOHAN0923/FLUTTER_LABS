@@ -1,4 +1,3 @@
-/*
 import 'package:flutter/material.dart';
 
 /*
@@ -15,7 +14,7 @@ class PwPage extends StatefulWidget {
 class PwPage extends StatelessWidget {
   final String email;
 
-  PwPage({required this.email});
+  const PwPage({required this.email});
 
   @override
   Widget build(BuildContext context) {
@@ -30,25 +29,27 @@ class PwPage extends StatelessWidget {
               child: Column(
                 children: [
                   SizedBox(
+                    width: 321,
                     height: 40,
                     child: Card(
                       elevation: 0,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(100.0),
-                          side: BorderSide(color: Colors.grey, width: 1)),
+                          side: const BorderSide(color: Colors.grey, width: 1)),
                       child: Row(
                         children: [
-                          Padding(padding: EdgeInsets.all(10)),
-                          Icon(
+                          const Padding(padding: EdgeInsets.all(5)),
+                          const Icon(
                             Icons.account_circle,
                             color: Colors.blue,
                           ),
-                          Padding(padding: EdgeInsets.all(10)),
+                          const Padding(padding: EdgeInsets.all(5)),
                           Text(email),
-                          Padding(padding: EdgeInsets.all(10)),
+                          //const Padding(padding: EdgeInsets.all(5)),
                           IconButton(
-                              onPressed: () {}, icon: Icon(Icons.expand_more)),
-                          Padding(padding: EdgeInsets.all(10)),
+                              onPressed: () {},
+                              icon: const Icon(Icons.expand_more)),
+                          const Padding(padding: EdgeInsets.all(1)),
                         ],
                       ),
                     ),
@@ -58,24 +59,6 @@ class PwPage extends StatelessWidget {
             ),
           ),
         ),
-      ),
-    );
-  }
-}
-*/
-import 'package:flutter/material.dart';
-
-class PwPage extends StatelessWidget {
-  final String email;
-
-  PwPage({required this.email});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(),
-        body: Container(child: Center(child: Text(email))),
       ),
     );
   }
